@@ -29,4 +29,19 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/admin/dashboard', [HomeController::class, 'index'])->middleware(['auth','admin']);
+Route::middleware('auth','admin')->group(function () {
+    Route::get('/admin/dashboard', [HomeController::class, 'index'])->name('admin.index');
+
+    Route::get('/branch/view', [HomeController::class, 'viewBranch'])->name('branch.view');
+    Route::get('/branch/add', [HomeController::class, 'addBranch'])->name('branch.add');
+    Route::post('/branch/store', [HomeController::class, 'store'])->name('branch.store');
+    Route::get('/branch/edit{id}', [HomeController::class, 'editBranch'])->name('branch.edit');
+    Route::post('/branch/update{id}', [HomeController::class, 'updateBranch'])->name('branch.update');
+//Country
+    Route::get('/country/view', [HomeController::class, 'viewCountry'])->name('country.view');
+    Route::get('/country/add', [HomeController::class, 'addCountry'])->name('country.add');
+    Route::post('/country/store', [HomeController::class, 'storeCountry'])->name('country.store');
+    Route::get('/country/edit{id}', [HomeController::class, 'editCountry'])->name('country.edit');
+    Route::post('/country/update{id}', [HomeController::class, 'updateCountry'])->name('country.update');
+});
+/*Route::get('/admin/dashboard', [HomeController::class, 'index'])->middleware(['auth','admin']);*/

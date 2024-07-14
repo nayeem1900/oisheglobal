@@ -12,4 +12,6 @@ class FrontendController extends Controller
 //dd('ok');
         return view('welcome');
     }
+
+
 }

@@ -47,6 +47,7 @@
                         </ul>
                     </div>
                 </li>
+
                 <li class="nav-section">
                 <span class="sidebar-mini-icon">
                   <i class="fa fa-ellipsis-h"></i>
@@ -56,27 +57,43 @@
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#base">
                         <i class="fas fa-layer-group"></i>
-                        <p>Branch</p>
+                        <p>Setting</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="base">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="components/avatars.html">
-                                    <span class="sub-item">view Branch</span>
+                                <a href="{{route('branch.view')}}">
+                                    <span class="sub-item">View Branch</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('branch.add')}}">
+                                    <span class="sub-item">Create Branch</span>
                                 </a>
                             </li>
 
-
+                            <li>
+                                <a href="{{route('country.view')}}">
+                                    <span class="sub-item">View Country</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('country.add')}}">
+                                    <span class="sub-item">Create Country</span>
+                                </a>
+                            </li>
 
                         </ul>
                     </div>
 
                 </li>
+
+
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#sidebarLayouts">
                         <i class="fas fa-th-list"></i>
-                        <p>Sidebar Layouts</p>
+                        <p>Create Branch User</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="sidebarLayouts">
@@ -135,14 +152,14 @@
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#charts">
                         <i class="far fa-chart-bar"></i>
-                        <p>Charts</p>
+                        <p>Role Management</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="charts">
                         <ul class="nav nav-collapse">
                             <li>
                                 <a href="charts/charts.html">
-                                    <span class="sub-item">Chart Js</span>
+                                    <span class="sub-item">Role Management</span>
                                 </a>
                             </li>
                             <li>
@@ -158,4 +175,8 @@
             </ul>
         </div>
     </div>
+
+
+
+
 </div>
