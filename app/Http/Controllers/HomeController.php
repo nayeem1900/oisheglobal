@@ -147,13 +147,12 @@ public function index(){
 
     public function viewUserInfo(){
 
-        $data['allCountry'] = Country::orderBy('id', 'asc')->get();
-        $data['allUser']=User_info::all();
+        //$data['allCountry'] = Country::orderBy('id', 'asc')->get();
 
-        $data['allUser']=User_info::all();
+        $data['allUser']=User_info::with(['country'])->get();
         $data['user']=User::all();
         $data['branches']=Branch::all();
-        $data['countries']=Country::all();
+        $data['allCountry']=Country::all();
 
         return view ('admin.user_info.view_user_info',$data);
 

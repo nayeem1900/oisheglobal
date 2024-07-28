@@ -89,12 +89,12 @@
                                                     <div class="form-button-action">
 
                                                         {{--<form action="{{route('subadmin.destroy',$item->id)}}" method="post">--}}
-                                                            {{--@csrf--}}
-                                                            {{--@method('delete')--}}
+                                                        {{--@csrf--}}
+                                                        {{--@method('delete')--}}
 
-                                                            {{--<button class="btn btn-link btn-danger" title="delete data" data-bs-toggle="tooltip"  data-original-title="Remove">--}}
-                                                                {{--<i class="fa fa-times"></i>--}}
-                                                            {{--</button>--}}
+                                                        {{--<button class="btn btn-link btn-danger" title="delete data" data-bs-toggle="tooltip"  data-original-title="Remove">--}}
+                                                        {{--<i class="fa fa-times"></i>--}}
+                                                        {{--</button>--}}
 
 
 

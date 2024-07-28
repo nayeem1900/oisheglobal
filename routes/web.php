@@ -7,7 +7,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SubadminController;
 use App\Http\Controllers\PermissionController;
-
+use App\Http\Controllers\PassengerController;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
@@ -35,6 +35,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/user_infostore', [HomeController::class, 'storeUserInfo'])->name('userinfo.store');
   Route::get('/user_info/edit{id}', [HomeController::class, 'editUserInfo'])->name('userinfo.edit');
     Route::post('/user_info/update{id}', [HomeController::class, 'updateUserInfo'])->name('userinfo.update');
+//Individual Passenger
+    Route::get('/passenger/view', [PassengerController::class, 'viewPassenger'])->name('passenger.view');
 
 
 });

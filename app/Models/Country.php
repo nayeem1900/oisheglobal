@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Country extends Model
 {
     use HasFactory;
+
+    public function user_info (){
+        return $this->hasMany('App\Models\User_info');
+
+    }
 }

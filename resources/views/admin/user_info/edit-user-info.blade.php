@@ -146,7 +146,7 @@
                                                         id="exampleFormControlSelect1">
                                                     <option>Select Country</option>
                                                     @foreach($allCountry as $country)
-                                                        <option value="{{$country->id}}" {{$country->country_id == $country->id ? 'selected':''}}>{{$country->name}}</option>
+                                                        <option value="{{$country->id}}" {{$allUser->country_id == $country->id ? 'selected':''}}>{{$country->name}}</option>
                                                     @endforeach
 
                                                 </select>

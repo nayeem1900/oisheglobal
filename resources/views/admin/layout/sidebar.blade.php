@@ -141,21 +141,21 @@
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#tables">
                         <i class="fas fa-table"></i>
-                        <p>Tables</p>
+                        <p>Passenger Information</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="tables">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="tables/tables.html">
-                                    <span class="sub-item">Basic Table</span>
+                                <a href="{{route('passenger.view')}}">
+                                    <span class="sub-item">view passenger</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="tables/datatables.html">
-                                    <span class="sub-item">Datatables</span>
-                                </a>
-                            </li>
+                            {{--<li>--}}
+                                {{--<a href="tables/datatables.html">--}}
+                                    {{--<span class="sub-item">Datatables</span>--}}
+                                {{--</a>--}}
+                            {{--</li>--}}
                         </ul>
                     </div>
                 </li>
