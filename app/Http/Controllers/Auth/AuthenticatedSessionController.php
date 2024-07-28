@@ -28,8 +28,16 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if($request->user()->role_id === 1){
+//      if($request->user()->role_id === 1){
+//            return redirect('admin/dashboard');
+//
+//        }
+
+        if(Auth()->user()->role_id !=2){
+
             return redirect('admin/dashboard');
+        }elseif
+            (Auth()->user()->role_id ==2){
 
         }
 

@@ -24,6 +24,8 @@ class RoleController extends Controller
     public function create()
     {
         //
+
+        return view('admin.role.create_role');
     }
 
     /**
@@ -32,6 +34,13 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         //
+
+        $request->validate ([
+            'name' => 'required|unique:roles,name'
+        ]);
+        Role::create($request->all());
+
+        return redirect()->route('role.index');
     }
 
     /**
@@ -45,24 +54,35 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         //
+        $role = Role::find($id);
+        return view('admin.role.edit_role',compact("role"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         //
+
+        $request->validate([
+            'name'=>'required|unique:roles,name'
+        ]);
+        Role::findOrFail($id)->update($request->all());
+
+        return redirect()->route('role.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
         //
+        Role::findOrFail($id)->delete();
+        return redirect()->route('role.index');
     }
 }

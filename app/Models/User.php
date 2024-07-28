@@ -16,6 +16,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    //protected $guarded = [];
+
     protected $fillable = [
         'name',
         'email',
@@ -23,6 +25,7 @@ class User extends Authenticatable
         'phone',
         'status',
         'role_id',
+        'branch_id'
     ];
 
     /**
@@ -50,6 +53,14 @@ class User extends Authenticatable
     }
     public function role (){
         return $this->belongsTo('App\Models\Role');
+
+    }
+    public function user_info ()
+    {
+        return $this->hasOne('App\Models\User_info');
+    }
+    public function branch (){
+        return $this->belongsTo('App\Models\Branch');
 
     }
 

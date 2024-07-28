@@ -55,6 +55,7 @@
                     <h4 class="text-section">Components</h4>
                 </li>
                 <li class="nav-item">
+                    @isset(auth()->user()->role->permission['permission']['setteing']['list'])
                     <a data-bs-toggle="collapse" href="#base">
                         <i class="fas fa-layer-group"></i>
                         <p>Setting</p>
@@ -86,42 +87,52 @@
 
                         </ul>
                     </div>
-
+                    @endisset
                 </li>
 
 
+
+
                 <li class="nav-item">
+                    @isset(auth()->user()->role->permission['permission']['createuser']['list'])
                     <a data-bs-toggle="collapse" href="#sidebarLayouts">
                         <i class="fas fa-th-list"></i>
-                        <p>Create Branch User</p>
+                        <p>Create User</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="sidebarLayouts">
                         <ul class="nav nav-collapse">
+
                             <li>
-                                <a href="sidebar-style-2.html">
-                                    <span class="sub-item">Sidebar Style 2</span>
+                                <a href="{{route('subadmin.index')}}">
+                                    <span class="sub-item">all User</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="icon-menu.html">
-                                    <span class="sub-item">Icon Menu</span>
+                                <a href="{{route('subadmin.create')}}">
+                                    <span class="sub-item">Create User</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
+                    @endisset
                 </li>
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#forms">
                         <i class="fas fa-pen-square"></i>
-                        <p>Forms</p>
+                        <p>Passenger Form</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="forms">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="forms/forms.html">
-                                    <span class="sub-item">Basic Form</span>
+                                <a href="{{route('userinfo.add')}}">
+                                    <span class="sub-item"> Create Passenger Form</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('userinfo.view')}}">
+                                    <span class="sub-item"> All Passenger</span>
                                 </a>
                             </li>
                         </ul>
@@ -150,25 +161,43 @@
                 </li>
 
                 <li class="nav-item">
+                    @isset(auth()->user()->role->permission['permission']['rolemanagement']['list'])
                     <a data-bs-toggle="collapse" href="#charts">
                         <i class="far fa-chart-bar"></i>
                         <p>Role Management</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="charts">
+
                         <ul class="nav nav-collapse">
+
                             <li>
-                                <a href="charts/charts.html">
-                                    <span class="sub-item">Role Management</span>
+
+                                <a href="{{route('role.index')}}">
+                                    <span class="sub-item">All Role</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="charts/sparkline.html">
-                                    <span class="sub-item">Sparkline</span>
+                                <a href="{{route('role.create')}}">
+                                    <span class="sub-item">Add Role</span>
                                 </a>
                             </li>
                         </ul>
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{route('permission.create')}}">
+                                    <span class="sub-item">Add Permission</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('permission.index')}}">
+                                    <span class="sub-item">All Permission</span>
+                                </a>
+                            </li>
+                        </ul>
+
                     </div>
+                    @endisset
                 </li>
 
 
