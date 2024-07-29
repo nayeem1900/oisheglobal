@@ -37,7 +37,7 @@
                                 <div class="card-title">Create User</div>
                             </div>
                             <div class="card-body">
-                                <form action="{{route('agent.store')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('agent.update',$users->id)}}" method="post" enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="row">
@@ -45,7 +45,7 @@
                                             <div class="form-group">
                                                 <label for="email">Email Address</label>
                                                 <input
-                                                        type="email" name="email"
+                                                        type="email" name="email" value="{{$users->email}}"
                                                         class="form-control"
                                                         id="email"
                                                         placeholder="Enter Email"/>
@@ -55,7 +55,7 @@
                                             <div class="form-group">
                                                 <label for="name">Name</label>
                                                 <input
-                                                        type="text" name="name"
+                                                        type="text" name="name" value="{{$users->name}}"
                                                         class="form-control"
                                                         id="name"
                                                         placeholder="Enter Name"/>
@@ -63,11 +63,12 @@
                                             </div>
                                         </div>
 
+
                                         <div class="col-md-6 col-lg-4">
                                             <div class="form-group">
                                                 <label for="mobile">Mobile No</label>
                                                 <input
-                                                        type="text" name="phone"
+                                                        type="text" name="phone" value="{{$users->phone}}" value="{{$users->phone}}"
                                                         class="form-control"
                                                         id="phone"
                                                         placeholder="Mobile"/>
@@ -75,18 +76,15 @@
                                             </div>
                                         </div>
 
-
-
                                         <div class="col-md-6 col-lg-4">
                                             <div class="form-group">
                                                 <label for="exampleFormControlSelect1">Select Branch</label>
                                                 <select
-                                                        class="form-select" name="branch_id" required
-
+                                                        class="form-select" name="branch_id"
                                                         id="exampleFormControlSelect1">
                                                     <option>Select Branch</option>
                                                     @foreach($branches as $branch)
-                                                        <option value="{{$branch->id}}">{{$branch->name}}</option>
+                                                        <option value="{{$branch->id}} {{$users->branch_id == $branch->id ? 'selected':''}}">{{$branch->name}}</option>
                                                     @endforeach
 
                                                 </select>
@@ -120,7 +118,7 @@
 
                                     </div>
                                     <div class="card-action">
-                                        <button class="btn btn-success">Submit</button>
+                                        <button class="btn btn-success">Update</button>
 
                                     </div>
                                 </form>

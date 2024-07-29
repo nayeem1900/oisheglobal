@@ -45,7 +45,16 @@
                                 </a>
                             </li>
                         </ul>
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="../demo1/index.html">
+                                    <span class="sub-item">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
+
+
                 </li>
 
                 <li class="nav-section">
@@ -85,6 +94,9 @@
                                 </a>
                             </li>
 
+
+
+
                         </ul>
                     </div>
                     @endisset
@@ -97,7 +109,7 @@
                     @isset(auth()->user()->role->permission['permission']['createuser']['list'])
                     <a data-bs-toggle="collapse" href="#sidebarLayouts">
                         <i class="fas fa-th-list"></i>
-                        <p>Create User</p>
+                        <p>Create Branch User</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="sidebarLayouts">
@@ -110,9 +122,20 @@
                             </li>
                             <li>
                                 <a href="{{route('subadmin.create')}}">
-                                    <span class="sub-item">Create User</span>
+                                    <span class="sub-item">Create Branch User</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{route('agent.view')}}">
+                                    <span class="sub-item">View Agent</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('agent.add')}}">
+                                    <span class="sub-item">Create Agent</span>
+                                </a>
+                            </li>
+
                         </ul>
                     </div>
                     @endisset
@@ -147,7 +170,7 @@
                     <div class="collapse" id="tables">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="{{route('passenger.view')}}">
+                                <a href="{{route('userinfo.view')}}">
                                     <span class="sub-item">view passenger</span>
                                 </a>
                             </li>

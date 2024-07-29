@@ -27,26 +27,25 @@ public function index(){
 
     public function viewBranch(){
 
+     $allData = Branch::all();
 
-        $data['allData']=Branch::all();
 
-
-        return view ('admin.branch.view_branch',$data);
+        return view ('admin.branch.view_branch',compact('allData'));
 
 
     }
 
 
     public function addBranch(){
-        $data['allData']=Branch::all();
-        return view('admin.branch.create_branch',$data);
+        $allData = Branch::all();
+        return view('admin.branch.create_branch',compact('allData'));
     }
     public function store(Request $request){
 
         $brnach = new Branch();
         $brnach->name = $request->name;
         $brnach->save();
-        return view('admin.branch.view_branch');
+        return redirect()->route('branch.view');
     }
     public function editBranch($id){
 
@@ -147,8 +146,13 @@ public function index(){
 
     public function viewUserInfo(){
 
-        //$data['allCountry'] = Country::orderBy('id', 'asc')->get();
-
+        $access = Role::orderBy('id', 'ASC')->where('id', '=', Auth::user()->role_id)->first();
+       // $data['allUser']=User_info::with(['country'])->get();
+        $data['allCountry'] = Country::orderBy('id', 'asc')->get();
+       // $access = Role::orderBy('id', 'ASC')->where('id', '=', Auth::user()->role_id)->first();
+      //  $data['user_id'] =Auth::id();
+      // $data['allUser']= User_info::where('id', 'user_id')->get();
+       $data['allUser']=User_info::where('user_id','=',Auth::id())->get();
         $data['allUser']=User_info::with(['country'])->get();
         $data['user']=User::all();
         $data['branches']=Branch::all();

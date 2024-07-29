@@ -8,6 +8,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SubadminController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PassengerController;
+use App\Http\Controllers\AgentController;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
@@ -36,7 +37,7 @@ Route::middleware('auth')->group(function () {
   Route::get('/user_info/edit{id}', [HomeController::class, 'editUserInfo'])->name('userinfo.edit');
     Route::post('/user_info/update{id}', [HomeController::class, 'updateUserInfo'])->name('userinfo.update');
 //Individual Passenger
-    Route::get('/passenger/view', [PassengerController::class, 'viewPassenger'])->name('passenger.view');
+    //Route::get('/passenger/view', [PassengerController::class, 'viewPassenger'])->name('passenger.view');
 
 
 });
@@ -59,12 +60,14 @@ Route::middleware('auth','admin','permission')->group(function () {
     Route::post('/country/store', [HomeController::class, 'storeCountry'])->name('country.store');
     Route::get('/country/edit{id}', [HomeController::class, 'editCountry'])->name('country.edit');
     Route::post('/country/update{id}', [HomeController::class, 'updateCountry'])->name('country.update');
+
     //Agent
-    Route::get('/agent/view', [HomeController::class, 'viewAgent'])->name('agent.view');
-    Route::get('/agent/add', [HomeController::class, 'addAgent'])->name('agent.add');
-    Route::post('/agent/store', [HomeController::class, 'storeAgent'])->name('agent.store');
-    Route::get('/agent/edit{id}', [HomeController::class, 'editAgent'])->name('agent.edit');
-    Route::post('/agent/update{id}', [HomeController::class, 'updateAgent'])->name('agent.update');
+    Route::get('/agent/view', [AgentController::class, 'viewAgent'])->name('agent.view');
+    Route::get('/agent/add', [AgentController::class, 'addAgent'])->name('agent.add');
+    Route::post('/agent/store', [AgentController::class, 'storeAgent'])->name('agent.store');
+    Route::get('/agent/edit{id}', [AgentController::class, 'editAgent'])->name('agent.edit');
+    Route::post('/agent/update{id}', [AgentController::class, 'updateAgent'])->name('agent.update');
+
 //Resource Controller
     Route::resource('role', RoleController::class);
     Route::resource('subadmin', SubadminController::class);

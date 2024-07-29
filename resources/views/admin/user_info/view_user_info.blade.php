@@ -38,11 +38,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="d-flex align-items-center">
-                                    <h4 class="card-title">User Management</h4>
-                                    <a href="" class="btn btn-primary btn-round ms-auto">
-
-                                        <i class="fa fa-plus">Create User </i>
-                                    </a>
+                                    <h4 class="card-title">Passenger Management</h4>
 
 
 
