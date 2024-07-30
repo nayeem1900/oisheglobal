@@ -146,21 +146,35 @@ public function index(){
 
     public function viewUserInfo(){
 
-        $access = Role::orderBy('id', 'ASC')->where('id', '=', Auth::user()->role_id)->first();
+       // $access = Role::orderBy('id', 'ASC')->where('id', '=', Auth::user()->role_id)->first();
        // $data['allUser']=User_info::with(['country'])->get();
-        $data['allCountry'] = Country::orderBy('id', 'asc')->get();
+      //  $data['allCountry'] = Country::orderBy('id', 'asc')->get();
        // $access = Role::orderBy('id', 'ASC')->where('id', '=', Auth::user()->role_id)->first();
       //  $data['user_id'] =Auth::id();
       // $data['allUser']= User_info::where('id', 'user_id')->get();
-       $data['allUser']=User_info::where('user_id','=',Auth::id())->get();
-        $data['allUser']=User_info::with(['country'])->get();
-        $data['user']=User::all();
+     //  $data['allUser']=User_info::where('user_id','=',user('id'))->get();
+
+
+
+
+
+    //use App\Models\Destination;
+   // use App\Models\Flight;
+
+        //$data['allUser']=User_info::with(['country'])->get();
+
+        //$data['allUser']= User_info::where('user_id',Auth::id())->with(['country'])->get();
+       $data['allUser']= User_info::where('user_id',Auth::id())->with(['country'])->get();
+        //$publishedComments = Comment::whereRelation('post', 'published', '=', true)->get();
+//        $data['allUser']=User_info::where('user_id', '=', Auth::id())->get();
+//        dd($data['allUser']);
+
+        $data['user'] = User::find(Auth::id());
+      // $data['allUser']=User::where('id',Auth::id())->with(['user_info','user_info.country'])->get();
+       // dd($data['allUser']->toArray());
         $data['branches']=Branch::all();
         $data['allCountry']=Country::all();
-
         return view ('admin.user_info.view_user_info',$data);
-
-
     }
 
 

@@ -75,7 +75,7 @@
                                                 <td>{{$item->email}}</td>
                                                 <td>{{$item->phone}}</td>
                                                 <td>{{$item->f_name}}</td>
-                                                <td>{{$item->country->name}}</td>
+                                                {<td>{{$item->country->name}}</td>
                                                 {{--{<td>{{$item->user->name}}</td>--}}
 
                                                 <td>

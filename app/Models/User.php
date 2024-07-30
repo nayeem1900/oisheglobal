@@ -58,7 +58,7 @@ class User extends Authenticatable
     }
     public function user_info ()
     {
-        return $this->belongsTo('App\Models\User_info');
+        return $this->hasMany('App\Models\User_info');
     }
     public function branch (){
         return $this->belongsTo('App\Models\Branch');
