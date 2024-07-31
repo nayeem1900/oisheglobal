@@ -29,7 +29,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Regestration</a>
                     <div class="dropdown-menu">
                         <a href="{{ route('register') }}" class="dropdown-item">Passenger</a>
-                        <a href="single.html" class="dropdown-item">Agent</a>
+                        <a href="" class="dropdown-item">Agent</a>
                     </div>
                 </div>
 

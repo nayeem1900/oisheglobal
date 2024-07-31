@@ -162,11 +162,33 @@ public function index(){
    // use App\Models\Flight;
 
         //$data['allUser']=User_info::with(['country'])->get();
-
+       // $data['allUser']= User_info::where('user_id',Auth::id())->with(['country'])->get();
         //$data['allUser']= User_info::where('user_id',Auth::id())->with(['country'])->get();
-       $data['allUser']= User_info::where('user_id',Auth::id())->with(['country'])->get();
+        //get user wise data
+       //$data['allUser']= User_info::where('user_id',Auth::id())->with(['country'])->get();
         //$publishedComments = Comment::whereRelation('post', 'published', '=', true)->get();
 //        $data['allUser']=User_info::where('user_id', '=', Auth::id())->get();
+
+//        if (Auth::user()->role_id == 1) {
+//            $data['allUser']=User_info::with(['country'])->get();
+//
+//        } else {
+//            $data['allUser']= User_info::where('user_id',Auth::id())->with(['country'])->get();
+//        }
+        if (Auth::user()->role_id == 1) {
+            $data['allUser']=User_info::with(['country'])->get();
+
+        }elseif (Auth::user()->role_id == 5){
+
+            $data['allUser']=User_info::with(['country'])->get();
+        }else{
+            $data['allUser']= User_info::where('user_id',Auth::id())->with(['country'])->get();
+        }
+
+
+
+
+       // $data['allUser']= User_info::where('user_id',Auth::id())->with(['country'])->get();
 //        dd($data['allUser']);
 
         $data['user'] = User::find(Auth::id());

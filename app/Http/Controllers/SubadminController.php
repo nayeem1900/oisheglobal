@@ -6,7 +6,9 @@ use App\Models\Branch;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+
 
 class SubadminController extends Controller
 {
@@ -83,7 +85,7 @@ class SubadminController extends Controller
 
         if($request->password == null) {
 
-            $request['password'] == auth()->user->password;
+            $request['password'] = (Auth::user()->password);
         }else{
             $request['password'] = Hash::make($request->password);
         }

@@ -16,6 +16,7 @@ use App\Http\Controllers\AgentController;
 Route::get('/',[FrontendController::class, 'index'])->name('frontend.index');
 
 
+
 //Route::get('/user_info/view', [HomeController::class, 'viewUserInfo'])->name('userinfo.view');
 //Route::get('/user_info/add', [HomeController::class, 'addUserInfo'])->name('userinfo.add');
 //Route::post('/user_infostore', [HomeController::class, 'storeUserInfo'])->name('userinfo.store');
@@ -27,6 +28,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -37,7 +40,7 @@ Route::middleware('auth')->group(function () {
   Route::get('/user_info/edit{id}', [HomeController::class, 'editUserInfo'])->name('userinfo.edit');
     Route::post('/user_info/update{id}', [HomeController::class, 'updateUserInfo'])->name('userinfo.update');
 //Individual Passenger
-    //Route::get('/passenger/view', [PassengerController::class, 'viewPassenger'])->name('passenger.view');
+
 
 
 });
