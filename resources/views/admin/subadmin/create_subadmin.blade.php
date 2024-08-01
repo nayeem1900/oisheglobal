@@ -7,7 +7,7 @@
         <div class="container">
             <div class="page-inner">
                 <div class="page-header">
-                    <h3 class="fw-bold mb-3">Permision DataTable</h3>
+                    <h3 class="fw-bold mb-3">Branch DataTable</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
                             <a href="#">
@@ -34,7 +34,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header" style="text-align: center">
-                                <div class="card-title">Create User</div>
+                                <div class="card-title">Create Branch User</div>
                             </div>
                             <div class="card-body">
                                 <form action="{{route('subadmin.store')}}" method="post">

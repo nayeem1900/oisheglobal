@@ -9,6 +9,7 @@ use App\Http\Controllers\SubadminController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PassengerController;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\BanerController;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
@@ -70,7 +71,12 @@ Route::middleware('auth','admin','permission')->group(function () {
     Route::post('/agent/store', [AgentController::class, 'storeAgent'])->name('agent.store');
     Route::get('/agent/edit{id}', [AgentController::class, 'editAgent'])->name('agent.edit');
     Route::post('/agent/update{id}', [AgentController::class, 'updateAgent'])->name('agent.update');
-
+///Baner
+    Route::get('/baner/view', [BanerController::class, 'viewBaner'])->name('baner.view');
+    Route::get('/baner/add', [BanerController::class, 'addBaner'])->name('baner.add');
+    Route::post('/baner/store', [BanerController::class, 'storeBaner'])->name('baner.store');
+    Route::get('/baner/edit{id}', [BanerController::class, 'editBaner'])->name('baner.edit');
+    Route::post('/baner/update{id}', [BanerController::class, 'updateBaner'])->name('baner.update');
 //Resource Controller
     Route::resource('role', RoleController::class);
     Route::resource('subadmin', SubadminController::class);

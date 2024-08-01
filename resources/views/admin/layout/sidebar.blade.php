@@ -93,6 +93,16 @@
                                     <span class="sub-item">Create Country</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{route('baner.view')}}">
+                                    <span class="sub-item">View Baner</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('baner.add')}}">
+                                    <span class="sub-item">Create Baner</span>
+                                </a>
+                            </li>
 
 
 
@@ -109,7 +119,7 @@
                     @isset(auth()->user()->role->permission['permission']['createuser']['list'])
                     <a data-bs-toggle="collapse" href="#sidebarLayouts">
                         <i class="fas fa-th-list"></i>
-                        <p>Create Branch User</p>
+                        <p>Create User</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="sidebarLayouts">
@@ -117,7 +127,7 @@
 
                             <li>
                                 <a href="{{route('subadmin.index')}}">
-                                    <span class="sub-item">all User</span>
+                                    <span class="sub-item">view Branch User</span>
                                 </a>
                             </li>
                             <li>

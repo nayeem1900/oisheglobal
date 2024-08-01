@@ -34,7 +34,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header" style="text-align: center">
-                                <div class="card-title">Create User</div>
+                                <div class="card-title">Create Agent User</div>
                             </div>
                             <div class="card-body">
                                 <form action="{{route('agent.store')}}" method="post" enctype="multipart/form-data">
