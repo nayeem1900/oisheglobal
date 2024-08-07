@@ -10,6 +10,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PassengerController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\BanerController;
+use App\Http\Controllers\UserBanerController;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
@@ -78,6 +79,14 @@ Route::middleware('auth','admin','permission')->group(function () {
     Route::get('/baner/edit{id}', [BanerController::class, 'editBaner'])->name('baner.edit');
     Route::post('/baner/update{id}', [BanerController::class, 'updateBaner'])->name('baner.update');
     Route::post('/baner/delete{id}', [BanerController::class, 'deleteBaner'])->name('baner.delete');
+
+    ///User Baner
+    Route::get('/ubaner/view', [UserBanerController::class, 'viewBaner'])->name('ubaner.view');
+    Route::get('/ubaner/add', [UserBanerController::class, 'addBaner'])->name('ubaner.add');
+    Route::post('/ubaner/store', [UserBanerController::class, 'storeBaner'])->name('ubaner.store');
+    Route::get('/ubaner/edit{id}', [UserBanerController::class, 'editBaner'])->name('ubaner.edit');
+    Route::post('/ubaner/update{id}', [UserBanerController::class, 'updateBaner'])->name('ubaner.update');
+    Route::post('/ubaner/delete{id}', [UserBanerController::class, 'deleteBaner'])->name('ubaner.delete');
 //Resource Controller
     Route::resource('role', RoleController::class);
     Route::resource('subadmin', SubadminController::class);

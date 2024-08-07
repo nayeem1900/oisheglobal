@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('userbaners', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('ubaner');
+            $table->string('img');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

@@ -242,8 +242,8 @@
                     <div class="collapse" id="maps">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="maps/googlemaps.html">
-                                    <span class="sub-item">Baner</span>
+                                <a href="{{route('ubaner.view')}}">
+                                    <span class="sub-item">View Baner</span>
                                 </a>
                             </li>
                             <li>

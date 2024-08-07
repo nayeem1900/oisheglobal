@@ -41,7 +41,7 @@
                         <thead>
                         <tr>
                             <th>SL</th>
-                            <th>Branch Name</th>
+                            <th>Baner</th>
 
                             <th>Action</th>
                         </tr>
