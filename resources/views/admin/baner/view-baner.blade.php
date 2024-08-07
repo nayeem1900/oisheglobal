@@ -53,7 +53,7 @@
                                 <td>{{($value->name)}}</td>
 
                                 <td>
-                                    <a title="Edit" class="btn btn-sm btn-primary" href="{{route('branch.edit',$value->id)}}"><i class="fa fa-edit"></i></a>
+                                    <a title="Edit" class="btn btn-sm btn-primary" href="{{route('baner.edit',$value->id)}}"><i class="fa fa-edit"></i></a>
 
 
                                 </td>

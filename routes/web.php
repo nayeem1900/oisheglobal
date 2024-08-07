@@ -77,6 +77,7 @@ Route::middleware('auth','admin','permission')->group(function () {
     Route::post('/baner/store', [BanerController::class, 'storeBaner'])->name('baner.store');
     Route::get('/baner/edit{id}', [BanerController::class, 'editBaner'])->name('baner.edit');
     Route::post('/baner/update{id}', [BanerController::class, 'updateBaner'])->name('baner.update');
+    Route::post('/baner/delete{id}', [BanerController::class, 'deleteBaner'])->name('baner.delete');
 //Resource Controller
     Route::resource('role', RoleController::class);
     Route::resource('subadmin', SubadminController::class);

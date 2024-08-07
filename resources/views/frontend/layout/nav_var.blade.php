@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-lg bg-dark navbar-dark" xmlns="http://www.w3.org/1999/html">
     <div class="container-fluid">
-        <a href="index.html" class="navbar-brand">Oishe Group</a>
+        <a href="{{route('frontend.index')}}" class="navbar-brand">Oishe Group</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>

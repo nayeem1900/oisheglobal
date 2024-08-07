@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2024 at 03:46 AM
+-- Generation Time: Aug 03, 2024 at 09:26 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,43 @@ SET time_zone = "+00:00";
 --
 -- Database: `oisheglobal`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `agents`
+--
+
+CREATE TABLE `agents` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `branch_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `baners`
+--
+
+CREATE TABLE `baners` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `baners`
+--
+
+INSERT INTO `baners` (`id`, `img`, `created_at`, `updated_at`) VALUES
+(1, '2024080102011.jfif', '2024-07-31 20:01:02', '2024-07-31 20:01:02');
 
 -- --------------------------------------------------------
 
@@ -49,7 +86,8 @@ INSERT INTO `branches` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (14, 'dinajpurjjsss', '2024-07-28 09:28:46', '2024-07-28 09:28:46'),
 (15, 'Naraygonj', '2024-07-28 09:31:51', '2024-07-28 09:31:51'),
 (16, 'khulna', '2024-07-28 09:37:55', '2024-07-28 09:37:55'),
-(17, 'Head Office', '2024-07-30 04:26:36', '2024-07-30 04:26:36');
+(17, 'Head Office', '2024-07-30 04:26:36', '2024-07-30 04:26:36'),
+(18, 'kustia', '2024-07-31 00:59:21', '2024-07-31 00:59:21');
 
 -- --------------------------------------------------------
 
@@ -104,7 +142,8 @@ INSERT INTO `countries` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (13, 'Brazil', '2024-07-13 08:18:14', '2024-07-13 08:18:14'),
 (14, 'japan', '2024-07-25 23:37:45', '2024-07-25 23:37:45'),
 (15, 'fff', '2024-07-28 09:44:37', '2024-07-28 09:44:37'),
-(16, 'Afganistan', '2024-07-30 04:26:57', '2024-07-30 04:26:57');
+(16, 'Afganistan', '2024-07-30 04:26:57', '2024-07-30 04:26:57'),
+(17, 'Netherland', '2024-07-31 00:59:51', '2024-07-31 00:59:51');
 
 -- --------------------------------------------------------
 
@@ -181,7 +220,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2024_07_13_104509_create_branches_table', 3),
 (7, '2024_07_13_134404_create_countries_table', 4),
 (14, '2024_07_17_045918_create_user_infos_table', 6),
-(15, '2024_07_25_121934_create_permissions_table', 7);
+(15, '2024_07_25_121934_create_permissions_table', 7),
+(18, '2024_07_28_135957_create_agents_table', 8),
+(19, '2024_08_01_005859_create_baners_table', 8);
 
 -- --------------------------------------------------------
 
@@ -271,7 +312,10 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('HC58ikHoHRILuYMiphOmuZjFq5sVU8IUMU64ogOV', 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiR01URk1rdmdMWlRlYnQyMVBXNm9kTnlPdzA2SEUzMDBLR1NkaUpUeSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTA6Imh0dHA6Ly9sb2NhbGhvc3Q6OTA5MC9vaXNoZWdsb2JhbC9wdWJsaWMvZGFzaGJvYXJkIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1722390274);
+('4E44LnSMmwQpV2h4Th3gEr8mO26TeW5Q3MerawyC', 18, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoidWpUd3EzaUtYb1BLRUQydzZIaGFLbjYwcWxnSlR4Zlp5ODNDeWxqMiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTY6Imh0dHA6Ly9sb2NhbGhvc3Q6OTA5MC9vaXNoZWdsb2JhbC9wdWJsaWMvYWRtaW4vZGFzaGJvYXJkIjt9czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czo1MDoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL29pc2hlZ2xvYmFsL3B1YmxpYy9kYXNoYm9hcmQiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxODt9', 1722448471),
+('JaWXsseK4PxajKJSxz0wd0SyfLalwa82Yh57kzYD', 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiSnFXU255VExFbWQ3RkIyTXgxRXNKeXpYNVR1d1ZTVGdkRk9Geks1ZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTE6Imh0dHA6Ly9sb2NhbGhvc3Q6OTA5MC9vaXNoZWdsb2JhbC9wdWJsaWMvYmFuZXIvdmlldyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1722616097),
+('knUQ8HvMgKzo7BfyJcLy7xEh04OpCoJjlf4q8uUL', 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiZGdtRWx4ZDhIZmJOMnBWdGxGa0VscFFsWVE3SDNyalg3YkxUSlJNcCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTY6Imh0dHA6Ly9sb2NhbGhvc3Q6OTA5MC9vaXNoZWdsb2JhbC9wdWJsaWMvYWRtaW4vZGFzaGJvYXJkIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1722566489),
+('nbsLrU0yfSwDr37PpRvnwOV0WcIEhlMAd6WuEVPN', 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiWHVLc3VPMmJlaGR4Y1hXVDI3eXhrQmx6YzFmcHB1T05vRkFXZzlJYSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTA6Imh0dHA6Ly9sb2NhbGhvc3Q6OTA5MC9vaXNoZWdsb2JhbC9wdWJsaWMvZGFzaGJvYXJkIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czo1MDoiaHR0cDovL2xvY2FsaG9zdDo5MDkwL29pc2hlZ2xvYmFsL3B1YmxpYy9kYXNoYm9hcmQiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1722486668);
 
 -- --------------------------------------------------------
 
@@ -327,7 +371,9 @@ INSERT INTO `users` (`id`, `role_id`, `name`, `phone`, `email`, `email_verified_
 (27, 3, 'Harun or Rashid Chowd', NULL, 'embd84@gmail.com', NULL, '$2y$12$UfbbbiZ6QR6JlXRJwLXRruI4zbA1zaJdD97AWePpy45guUNQ6eMCe', 1, 3, NULL, NULL, 72, NULL, '2024-07-29 11:41:29', '2024-07-29 11:41:29'),
 (28, 3, 'testoii', NULL, 'oisho@oinn.com', NULL, '$2y$12$xX9WeDGWe.aOeyF47lUnbO85xp5yrMHeaTWq6226g5HDvFIscxsuC', 0, 6, NULL, NULL, 67, NULL, '2024-07-29 11:47:27', '2024-07-29 11:47:27'),
 (29, 3, 'oooooooeeee', '01818811220', 'ooooo@ooooo.com', NULL, '$2y$12$.kHjwHCl4pOaBZSYbWbmuusZv4mOaUW53pY1ZQezFau2MzEAA9ATi', 0, 3, NULL, NULL, 14, NULL, '2024-07-29 11:49:11', '2024-07-29 11:49:11'),
-(30, 2, 'rtest@gmail.com', '1223456789', 'rtest@gmail.com', NULL, '$2y$12$jEEUzerUcRqNM0pAcUjkk.0lcKk5WLNAbREY8iYP84LzTc0eZFBqC', 1, NULL, NULL, NULL, NULL, NULL, '2024-07-29 20:32:37', '2024-07-29 20:32:37');
+(30, 2, 'rtest@gmail.com', '1223456789', 'rtest@gmail.com', NULL, '$2y$12$jEEUzerUcRqNM0pAcUjkk.0lcKk5WLNAbREY8iYP84LzTc0eZFBqC', 1, NULL, NULL, NULL, NULL, NULL, '2024-07-29 20:32:37', '2024-07-29 20:32:37'),
+(31, 3, 'orsihi', '0147852369', 'aragent@oishi.com', NULL, '$2y$12$afVfexZxVNzS6KAVC73do..NzdE5e8rvL0ariB4XaKuY.wwc5sBDu', 0, 18, NULL, NULL, 18, NULL, '2024-07-31 01:00:51', '2024-07-31 01:00:51'),
+(32, 3, 'Oishiglobal', '0147852369', 'ansar@oishi.com', NULL, '$2y$12$1YtyDkmkLNb8YN8K5ecObe3auK15sEHaytAXh1zVah3XCO6ZvSeYO', 0, 18, NULL, NULL, 87, NULL, '2024-07-31 09:51:07', '2024-07-31 09:51:07');
 
 -- --------------------------------------------------------
 
@@ -365,11 +411,24 @@ INSERT INTO `user_infos` (`id`, `name`, `phone`, `email`, `f_name`, `m_name`, `n
 (2, 'Harun or Rashid Chowdhury', '01818811220', 'user@gmail.com', 'abul khair', 'Nasrin', '12345678902', '202407271940const.jpeg', NULL, 1, 'Lakshmipur', 7, NULL, NULL, 1, 1, '2024-07-27 13:40:14', '2024-07-27 13:40:14'),
 (3, 'nnn', '0181881120', 'pp@ois.com', 'abul khair', 'd', '123456789', NULL, NULL, 29, 'fff', 13, NULL, NULL, 29, 29, '2024-07-27 19:45:08', '2024-07-29 12:01:04'),
 (4, 'oshiiiiii', '018177445552', 'oiss@gmail.com', 'hhhhh', 'kkkkk', '145555555', NULL, NULL, 29, 'jatrabar', 10, NULL, NULL, 29, 29, '2024-07-29 11:50:39', '2024-07-29 12:01:41'),
-(5, 'Harun or Rashid Chowdhury', '01818811220', 'nayeembd84@gmail.com', 'd', 'dd', '4444444', '202407291845const.jpeg', NULL, 13, 'KHALEDA MONZIL,MEARASTAMATHA,SHAMSERABAD.', 7, NULL, NULL, 13, 13, '2024-07-29 12:45:41', '2024-07-29 12:45:41');
+(5, 'Harun or Rashid Chowdhury', '01818811220', 'nayeembd84@gmail.com', 'd', 'dd', '4444444', '202407291845const.jpeg', NULL, 13, 'KHALEDA MONZIL,MEARASTAMATHA,SHAMSERABAD.', 7, NULL, NULL, 13, 13, '2024-07-29 12:45:41', '2024-07-29 12:45:41'),
+(6, 'oshi test', '01478954236', 'oser@oer.com', 'ffff', 'mmmmmm', '123456789', '202407310702const.jpeg', NULL, 31, 'dd', 17, NULL, NULL, 31, 31, '2024-07-31 01:02:43', '2024-07-31 01:02:43');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `agents`
+--
+ALTER TABLE `agents`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `baners`
+--
+ALTER TABLE `baners`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `branches`
@@ -468,16 +527,28 @@ ALTER TABLE `user_infos`
 --
 
 --
+-- AUTO_INCREMENT for table `agents`
+--
+ALTER TABLE `agents`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `baners`
+--
+ALTER TABLE `baners`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `branches`
 --
 ALTER TABLE `branches`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -495,7 +566,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -513,13 +584,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `user_infos`
 --
 ALTER TABLE `user_infos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

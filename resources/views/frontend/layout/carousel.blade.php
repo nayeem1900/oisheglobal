@@ -3,8 +3,10 @@
         <div class="owl-carousel">
             <div class="carousel-item">
                 <div class="carousel-img">
-                    <img src="{{asset('frontend/components/img/Web Banar Ok.jpg')}}" alt="Image">
+                    <img src="{{asset('upload/pic/' .$baner->img)}}" alt="Image">
                 </div>
+                {{--{{asset('frontend/components/img/Web Banar Ok.jpg')}}--}}
+
                 {{--<div class="carousel-text">
                     <h1></h1>
                     <p>

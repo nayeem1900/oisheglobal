@@ -233,6 +233,27 @@
                     @endisset
                 </li>
 
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#maps">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>User Setting</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="maps">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="maps/googlemaps.html">
+                                    <span class="sub-item">Baner</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="maps/jsvectormap.html">
+                                    <span class="sub-item">ttttttt</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
 
             </ul>
         </div>
